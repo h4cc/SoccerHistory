@@ -6,6 +6,12 @@ framework:
     session:
         storage_id: session.storage.mock_file
 
+doctrine:
+    dbal:
+        connections:
+            default:
+                dbname:   %database_test%
+
 web_profiler:
     toolbar: false
     intercept_redirects: false
