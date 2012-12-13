@@ -3,6 +3,8 @@
 /app/cache/*
 /app/logs/*
 
+/bin/*
+
 /web/bundles/*
 
 /vendor/
