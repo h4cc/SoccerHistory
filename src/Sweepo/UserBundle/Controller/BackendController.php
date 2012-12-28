@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Sweepo\UserBundle\Entity\User;
 
-class SecurityController extends Controller
+class BackendController extends Controller
 {
     /**
      * @Route("/login")

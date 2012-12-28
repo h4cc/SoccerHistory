@@ -10,7 +10,7 @@ sweepo_core:
 
 login:
     pattern: /login
-    defaults: { _controller: SweepoUserBundle:Security:login }
+    defaults: { _controller: SweepoUserBundle:Backend:login }
 
 login_check:
     pattern: /login_check
