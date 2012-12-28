@@ -16,7 +16,7 @@ before_install:
   - cat .travis/phpconfig | sudo tee /etc/apache2/conf.d/phpconfig > /dev/null
   - cat .travis/virtualhost | sed -e "s~PATH~`pwd`~g" | sudo tee /etc/apache2/sites-available/default > /dev/null
   - sudo service apache2 restart > /dev/null
-  - mysql -e 'create database balloon5_test;'
+  - mysql -e 'create database sweepo_test;'
 
 before_script:
   # basic config
