@@ -27,6 +27,7 @@ before_script:
   - rm app/config/config_prod.yml
 
   - cp .travis/app.php web/app.php
+  - cp .travis/behat.yml behat.yml
   - cp .travis/config_prod.yml app/config/config_prod.yml
   - cp .travis/parameters.yml app/config/parameters.yml
 
@@ -42,3 +43,4 @@ before_script:
 
 script:
   - phpunit -c app/ --stop-on-failure
+  - bin/behat -f progress
