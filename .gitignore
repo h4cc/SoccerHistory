@@ -6,6 +6,7 @@
 /web/bundles/*
 /web/css/*
 /web/js/*
+/web/img/*
 
 /vendor/
 .DS_Store

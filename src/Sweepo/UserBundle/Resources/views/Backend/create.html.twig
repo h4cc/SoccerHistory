@@ -1,0 +1,51 @@
+{% extends "SweepoCoreBundle:Layouts:main.html.twig" %}
+
+{% block container %}
+    <h1>Create</h1>
+
+    <form action="" method="post">
+
+        {{ form_errors(form) }}
+
+        <div>
+            <label for="create_user_email">{{ "email" | trans }} :</label>
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+
+        <div>
+            <label for="create_user_username">{{ "username" | trans }} :</label>
+            {{ form_errors(form.username) }}
+            {{ form_widget(form.username) }}
+        </div>
+
+        <div id="passwords" class="alert alert-info">
+            {% for passwordField in form.password %}
+                <div class="form-field">
+                    <span class="icon-lock"></span>{{ form_label(passwordField) }}
+                    {{ form_errors(passwordField) }}
+                    {{ form_widget(passwordField) }}
+                </div>
+            {% endfor %}
+        </div>
+
+        {{ form_rest(form) }}
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ "signin" | trans }}</button>
+        </div>
+    </form>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+    {% stylesheets
+        '@SweepoUserBundle/Resources/public/css/Backend/create.less'
+        filter='less,?yui_css'
+    %}
+
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+{% endblock %}

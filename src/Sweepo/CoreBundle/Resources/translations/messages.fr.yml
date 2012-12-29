@@ -1,3 +1,12 @@
+# Generals
+email: "Email"
+
+# Create
+signin: "S'incrire"
+password_not_match: "Les champs de Mot de passe doivent être égaux."
+password1: "Mot de passe"
+password2: "Répéter le mot de passe"
+
 # Login
 username: "Pseudo"
 password: "Mot de passe"

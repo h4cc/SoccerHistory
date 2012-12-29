@@ -20,7 +20,7 @@ security:
     firewalls:
         secured_area:
             pattern: ^/
-            anonymous:  ~
+            anonymous: ~
             form_login:
                 login_path: /login
                 check_path:  /login_check
@@ -28,4 +28,5 @@ security:
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/create-account, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }

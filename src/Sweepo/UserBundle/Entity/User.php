@@ -5,11 +5,18 @@ namespace Sweepo\UserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
+
 /**
  * Sweepo\UserBundle\Entity\User
  *
- * @ORM\Table()
+ * @ORM\Table(indexes={
+    @ORM\Index(name="email_idx", columns={"email"})
+    })
  * @ORM\Entity(repositoryClass="Sweepo\UserBundle\Entity\UserRepository")
+ * @DoctrineAssert\UniqueEntity("email")
+ * @DoctrineAssert\UniqueEntity("username")
  */
 class User implements UserInterface, \Serializable
 {
@@ -26,6 +33,10 @@ class User implements UserInterface, \Serializable
      * @var string $email
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     * @Assert\Length(max = 150)
      */
     private $email;
 
@@ -33,6 +44,9 @@ class User implements UserInterface, \Serializable
      * @var string $username
      *
      * @ORM\Column(name="username", type="string", length=255)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     * @Assert\Length(max = 50)
      */
     private $username;
 
@@ -40,6 +54,8 @@ class User implements UserInterface, \Serializable
      * @var string $password
      *
      * @ORM\Column(name="password", type="string", length=40)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
      */
     private $password;
 
@@ -76,6 +92,7 @@ class User implements UserInterface, \Serializable
         $this->salt = md5(uniqid(null, true));
         $this->createdAt = new \Datetime();
         $this->setLocal('fr');
+        $this->setIsActive(false);
     }
 
     /**
