@@ -4,6 +4,8 @@
 /app/logs/*
 
 /web/bundles/*
+/web/css/*
+/web/js/*
 
 /vendor/
 .DS_Store

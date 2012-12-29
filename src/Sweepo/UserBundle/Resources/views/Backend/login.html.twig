@@ -1,13 +1,19 @@
-{% if error %}
-    <div>{{ error.message }}</div>
-{% endif %}
+{% extends "SweepoCoreBundle:Layouts:main.html.twig" %}
 
-<form action="{{ path('login_check') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+{% block container %}
+    {% if error %}
+        <div class="alert alert-error">{{ error.message }}</div>
+    {% endif %}
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+    <form action="{{ path('login_check') }}" method="post">
+        <label for="username">{{ "username" | trans }} :</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-    <button type="submit">login</button>
-</form>
+        <label for="password">{{ "password" | trans }} :</label>
+        <input type="password" id="password" name="_password" />
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ "login" | trans }}</button>
+        </div>
+    </form>
+{% endblock %}

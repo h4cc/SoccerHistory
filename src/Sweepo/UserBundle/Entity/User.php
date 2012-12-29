@@ -44,6 +44,13 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
+     * @var string $local
+     *
+     * @ORM\Column(name="local", type="string", length=10)
+     */
+    private $local;
+
+    /**
      * @var boolean $isActive
      *
      * @ORM\Column(name="isActive", type="boolean")
@@ -68,6 +75,7 @@ class User implements UserInterface, \Serializable
     {
         $this->salt = md5(uniqid(null, true));
         $this->createdAt = new \Datetime();
+        $this->setLocal('fr');
     }
 
     /**
@@ -147,6 +155,29 @@ class User implements UserInterface, \Serializable
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set local
+     *
+     * @param string $local
+     * @return User
+     */
+    public function setLocal($local)
+    {
+        $this->local = $local;
+
+        return $this;
+    }
+
+    /**
+     * Get local
+     *
+     * @return string
+     */
+    public function getLocal()
+    {
+        return $this->local;
     }
 
     /**

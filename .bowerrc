@@ -1,0 +1,5 @@
+{
+    "directory" : "src/Sweepo/CoreBundle/Resources/public/components",
+    "json"      : "component.json",
+    "endpoint"  : "https://bower.herokuapp.com"
+}
