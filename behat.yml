@@ -1,38 +1,5 @@
 default:
-  context:
-    class : 'features\bootstrap\FeatureContext'
-    parameters:
-      stop_on_failure : false
-      reset_database  : false
-      environment     : prod
-      debug           : true
   extensions:
     Behat\MinkExtension\Extension:
-      base_url : 'http://sweepo.dev/'
-      sahi: ~
-      goutte   :
-
-      default_session: goutte
-      javascript_session: sahi
-      browser_name: phantomjs
-
-test:
-  context:
-    parameters:
-      stop_on_failure : true
-      reset_database  : true
-      environment     : test
-      debug           : false
-  extensions:
-    Behat\MinkExtension\Extension:
-      base_url : 'http://sweepo.dev/app_test.php'
-
-dev:
-  context:
-    parameters:
-      reset_database : true
-      environment    : dev
-      debug          : true
-  extensions:
-    Behat\MinkExtension\Extension:
-      base_url : 'http://sweepo.dev/app_dev.php'
+      goutte: ~
+      base_url: "http://sweepo.dev/"
