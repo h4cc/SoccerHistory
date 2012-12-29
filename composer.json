@@ -21,7 +21,10 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
         "kriswallsmith/assetic": "1.1.*@dev",
-        "behat/behat": "2.4.*@stable"
+        "behat/behat": "2.4.*@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-sahi-driver": "*"
     },
     "scripts": {
         "post-install-cmd": [
