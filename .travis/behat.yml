@@ -3,3 +3,11 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       base_url: "http://localhost/"
+
+travis:
+  context:
+    parameters:
+      stop_on_failure : false
+      reset_database  : true
+      environment     : test
+      debug           : true

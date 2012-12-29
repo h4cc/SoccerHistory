@@ -43,4 +43,4 @@ before_script:
 
 script:
   - phpunit -c app/ --stop-on-failure
-  - bin/behat -f progress
+  - bin/behat --profile=travis -f progress
