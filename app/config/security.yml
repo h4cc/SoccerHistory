@@ -18,6 +18,9 @@ security:
             entity: { class: SweepoUserBundle:User, property: username }
 
     firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
         secured_area:
             pattern: ^/
             anonymous: ~
