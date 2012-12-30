@@ -1,4 +1,4 @@
-Feature: Search
+Feature: Security
   In order to see if the security firewall works correctly
   We test access some url and see the stats code
 

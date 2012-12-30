@@ -1,3 +1,11 @@
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+sweepo_betting:
+    resource: "@SweepoBettingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 sweepo_user:
     resource: "@SweepoUserBundle/Controller/"
     type:     annotation
