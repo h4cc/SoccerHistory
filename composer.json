@@ -21,7 +21,8 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
         "kriswallsmith/assetic": "1.1.*@dev",
-        "friendsofsymfony/jsrouting-bundle": "dev-master"
+        "friendsofsymfony/jsrouting-bundle": "dev-master",
+        "sensio/buzz-bundle" : "dev-master"
     },
     "require-dev": {
         "behat/behat": "2.4.*@stable",

@@ -29,6 +29,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $user->encodePassword($factory);
         $user->setEmail('r.gazelot@gmail.com');
         $user->setIsActive(true);
+        $this->setReference('remy', $user);
         $manager->persist($user);
 
         $user = new User();
@@ -44,6 +45,6 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
 
     public function getOrder()
     {
-        return 1;
+        return 10;
     }
 }
