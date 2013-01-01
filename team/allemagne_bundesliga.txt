@@ -1,0 +1,20 @@
+league:Bundesliga
+pays:Allemagne
+Bayern Munich
+Leverkusen
+Dortmund
+E. Francfort
+Fribourg
+Mayence
+Schalke
+M'Gladbach
+Stuttgart
+Hambourg
+Hanovre
+Brême
+Fortuna Dusseldorf
+Nuremberg
+Wolfsburg
+Hoffenheim
+Augsbourg
+Greuther Fürth

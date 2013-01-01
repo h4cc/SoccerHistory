@@ -1,0 +1,22 @@
+league:Serie A
+pays:Italie
+Juventus
+Lazio
+Inter
+Fiorentina
+Naples
+AS Rome
+Milan
+Parme
+Catane
+Udinese
+Atalanta Bergame
+Chievo
+Turin
+Bologne
+Sampdoria
+Pescara
+Cagliari
+Palerme
+Genoa
+Sienne

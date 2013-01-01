@@ -29,18 +29,10 @@ class Team
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="league", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\League")
+     * @ORM\JoinColumn(name="league_id", referencedColumnName="id")
      */
     private $league;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="country", type="string", length=255)
-     */
-    private $country;
 
     /**
      * @var \DateTime
@@ -107,29 +99,6 @@ class Team
     public function getLeague()
     {
         return $this->league;
-    }
-
-    /**
-     * Set country
-     *
-     * @param string $country
-     * @return Team
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
     }
 
     /**

@@ -1,0 +1,24 @@
+league:L2
+pays:Espagne
+Elche
+Girona
+Alcorcon
+Almeria
+Villareal
+Ponferradina
+Las Palmas
+Athletic Barcelone
+Sabadell
+Recreativo Huelva
+Cordoba
+Lugo
+Numancia
+Gijon
+Real Murcie
+RM Castilla
+Xerez
+Guadalajara
+Mirandes
+Huesca
+Santander
+Hercules

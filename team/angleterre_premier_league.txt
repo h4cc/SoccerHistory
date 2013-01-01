@@ -1,0 +1,22 @@
+league:Premier League
+pays:Angleterre
+Manchester United
+Manchester City
+Tottenham
+Chelsea
+Arsenal
+Everton
+West Bromwich
+Swansea City
+Stoke City
+Liverpool
+West Ham Utd
+Norwich City
+Fulham
+Sunderland
+Newcastle
+Aston Villa
+Wigan Athletic
+Southampton
+Reading
+QPR

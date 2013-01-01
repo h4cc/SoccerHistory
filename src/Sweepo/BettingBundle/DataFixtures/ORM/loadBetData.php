@@ -23,8 +23,8 @@ class LoadBetData extends AbstractFixture implements OrderedFixtureInterface, Co
     {
         $bet = new Bet();
         $bet->setUser($this->getReference('remy'));
-        $bet->setFirstTeam($this->getReference('paris'));
-        $bet->setSecondTeam($this->getReference('lyon'));
+        $bet->setFirstTeam($this->getReference('xylo'));
+        $bet->setSecondTeam($this->getReference('milo'));
         $bet->setBet('loltest');
         $bet->setType('test');
         $bet->setOdds(2.3);

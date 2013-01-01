@@ -1,0 +1,24 @@
+league:Serie B
+pays:Italie
+Sassuolo
+Livourne
+HELLAS VERONE
+Empoli
+MODENE
+Brescia
+Varese
+Stabia
+Padova
+Cittadella
+Ascoli
+Spezia
+Ternana
+Bari
+Lanciano
+Crotone
+Reggina
+NOVARE
+Cesena
+Vicenza
+Pro Vercelli
+Grosseto

@@ -1,0 +1,20 @@
+league:Division 2
+pays:Allemagne
+Braunschweig
+Hertha Berlin
+Kaiserslautern
+Cottbus
+Aalen
+Munich 1860
+Union Berlin
+Francfort
+Cologne
+Ingolstadt
+Erzgebirge Aue
+Paderborn
+Sankt Pauli
+Duisbourg
+Bochum
+Dynamo Dresde
+Sandhausen
+Jahn Regensburg

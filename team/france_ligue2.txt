@@ -1,0 +1,22 @@
+league:Ligue 2
+pays:France
+Nantes
+Monaco
+Caen
+Angers
+Guingamp
+Istres
+Dijon
+Lens
+Le Havre
+Nîmes
+Auxerre
+Tours
+Chateauroux
+Le Mans
+Clermont
+Laval
+Arles
+Gazelec
+Niort
+Sedan

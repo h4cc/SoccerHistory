@@ -1,0 +1,22 @@
+league:Ligue 1
+pays:France
+Paris Saint-Germain
+Lyon
+Marseille
+Rennes
+Lorient
+Valenciennes
+Bordeaux
+Lille
+Nice
+St. Etienne
+Montpellier
+Toulouse
+Bastia
+Brest
+Reims
+Ajaccio
+Evian-Thonon
+Sochaux
+Troyes
+Nancy

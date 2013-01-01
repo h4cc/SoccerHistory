@@ -1,0 +1,26 @@
+league:Championship
+pays:Angleterre
+Cardiff
+Hull
+Crystal Palace
+Middlesbrough
+Leicester
+Watford
+Millwall
+Leeds
+Brighton
+Derby
+Nottingham Forest
+Burnley
+Blackburn
+Blackpool
+Charlton
+Bolton
+Huddersfield
+Wolverhampton
+Ipswich
+Birmingham
+Peterborough
+Sheffield
+Bristol City
+Barnsley
