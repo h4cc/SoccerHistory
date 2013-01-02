@@ -1,12 +1,6 @@
 {% extends "SweepoCoreBundle:Layouts:main.html.twig" %}
 
 {% block container %}
-
-    <div id="action_table">
-        <button id="add_bet_button" class="btn btn-success"><span class="icon-plus icon-white"></span>Ajouter</button>
-        <button class="btn"><span class="icon-filter"></span>Filtres</button>
-    </div>
-
     <div id="add_bet" class="clearfix">
         <form action="" method="post">
             <div class="span4">
@@ -57,23 +51,12 @@
                 <button class="btn btn-info">Save</button>
             </div>
         </form>
-        <i class="icon icon-remove"></i>
     </div>
-
-    <div id="loading_table">
-        <p class="text_center">{{ "loading" | trans }}</p>
-        <div id="progress_bar_table" class="progress progress-info progress-striped active">
-          <div class="bar" style="width: 100%; margin:0 auto;"></div>
-        </div>
-    </div>
-
-    <table id="main_table" class="table"></table>
-
 {% endblock %}
 
 {% block stylesheets %}
     {% stylesheets
-        '@SweepoBettingBundle/Resources/public/css/index.less'
+        '@SweepoBettingBundle/Resources/public/css/betAdd.less'
         filter='less,?yui_css'
     %}
 
@@ -83,7 +66,7 @@
 
 {% block javascript %}
     {% javascripts
-        '@SweepoBettingBundle/Resources/public/js/index.js'
+        '@SweepoBettingBundle/Resources/public/js/betAdd.js'
         filter='yui_js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>

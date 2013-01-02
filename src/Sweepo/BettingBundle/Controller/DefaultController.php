@@ -13,10 +13,19 @@ use Sweepo\BettingBundle\Form\BetType;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/bets", name="bets")
      * @Template()
      */
-    public function indexAction(Request $request)
+    public function betsAction(Request $request)
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/bets/add", name="bets_add")
+     * @Template()
+     */
+    public function betAddAction(Request $request)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $user = $this->getUser();
@@ -38,5 +47,14 @@ class DefaultController extends Controller
             'user' => $user,
             'form' => $form->createView(),
         ];
+    }
+
+    /**
+     * @Route("/timeline", name="timeline")
+     * @Template()
+     */
+    public function timelineAction(Request $request)
+    {
+        return ['ok' => 'ok'];
     }
 }

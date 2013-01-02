@@ -1,39 +1,19 @@
 <thead>
-    <tr>
-        <th class="ratio2 left">Date</th>
-        <th class="ratio4 left">Match</th>
-        <th class="ratio4 left">Type de paris</th>
-        <th class="ratio2 left">Pari</th>
-        <th class="ratio1 center">Cote</th>
-        <th class="ratio1 center">Mise %</th>
-        <th class="ratio1 center">Mise €</th>
-        <th class="ratio1 center">Résultat</th>
-        <th class="ratio1 center">G/P €</th>
-        <th class="ratio1 center">P %</th>
-        <th class="ratio4 left">Actions</th>
+    <tr id="th_table">
+        <th class="text_center" style="width:30px;">Date</th>
+        <th class="text_center" style="width:100px">Date</th>
+        <th class="text_center" style="width:470px">Match</th>
     </tr>
 </thead>
 <tbody>
 
     {% for bet in bets %}
         <tr>
-            <td class="ratio2 left">{{ bet.date | date("d.m.Y") }}</td>
-            <td class="ratio4 left">{{ bet.firstTeam.name }} - {{ bet.secondTeam.name }}</td>
-            <td class="ratio4 left">{{ bet.type }}</td>
-            <td class="ratio2 left">{{ bet.bet }}</td>
-            <td class="ratio1 center">{{ bet.odds }}</td>
-            <td class="ratio1 center">{{ bet.stakePercent }}</td>
-            <td class="ratio1 center">{{ bet.stakeEuro }}</td>
-            <td class="ratio1 center">{{ bet.result }}</td>
-            <td class="ratio1 center">{{ bet.gainLoss }}</td>
-            <td class="ratio1 center">{{ bet.profit }}</td>
-            <td class="ratio4 left">
-                <button class="btn actions">
-                    <span class="icon-edit"></span>
-                </button>
-                <button class="btn btn-danger actions">
-                    <span class="icon-remove icon-white"></span>
-                </button>
+            <td class="text_center">{{ bet.result }}</td>
+            <td class="text_center">{{ bet.date | date("d.m.Y") }}</td>
+            <td class="text_left">
+                {{ bet.firstTeam.name }} - {{ bet.secondTeam.name }}
+                <i class="icon icon-circle-arrow-right"></i>
             </td>
         </tr>
     {% endfor %}
@@ -41,22 +21,6 @@
 </tbody>
 
 <style type="text/css">
-
-    .ratio1 {
-        width: 6%;
-    }
-
-    .ratio2 {
-        width: 8.6%;
-    }
-
-    .ratio3 {
-        width: 13%;
-    }
-
-    .ratio4 {
-        width: 17.4%;
-    }
 
     .actions {
         padding: 0 5px 0 5px;
@@ -66,4 +30,49 @@
         margin: 2px 0 4px 0;
     }
 
+    #th_table {
+        color: #333;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+        background-color: whiteSmoke;
+        background-image: -moz-linear-gradient(top, white, #E6E6E6);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E6E6E6));
+        background-image: -webkit-linear-gradient(top, white, #E6E6E6);
+        background-image: -o-linear-gradient(top, white, #E6E6E6);
+        background-image: linear-gradient(to bottom, white, #E6E6E6);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+        border: 1px solid #E6E6E6;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+        -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+    }
+
+    #th_table th{
+        border-left:1px solid #E6E6E6;
+    }
+
+    #main_table tbody tr:hover {
+        background: #daf0ff;
+        cursor:pointer;
+    }
+
+    #main_table tbody td i {
+        float:right;
+        margin-top:3px;
+        display:none;
+    }
+
 </style>
+
+<script type="text/javascript">
+    $(function(){
+        $('td').on('mouseenter', function() {
+            $(this).children('i').show();
+        });
+
+        $('td').on('mouseleave', function() {
+            $(this).children('i').hide();
+        });
+    });
+</script>

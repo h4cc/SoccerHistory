@@ -25,19 +25,19 @@ class Bet
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="Sweepo\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Sweepo\UserBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
     /**
-     * @ORM\OneToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
+     * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
      * @ORM\JoinColumn(name="first_team", referencedColumnName="id")
      */
     private $first_team;
 
     /**
-     * @ORM\OneToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
+     * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
      * @ORM\JoinColumn(name="second_team", referencedColumnName="id")
      */
     private $second_team;
@@ -46,8 +46,8 @@ class Bet
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)
-     * @Assert\NotNull(groups={"registration"})
-     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
      */
     private $type;
 
@@ -55,7 +55,7 @@ class Bet
      * @var string
      *
      * @ORM\Column(name="bet", type="string", length=255)
-     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\NotBlank()
      */
     private $bet;
 
@@ -63,7 +63,7 @@ class Bet
      * @var float
      *
      * @ORM\Column(name="odds", type="float")
-     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\NotBlank()
      */
     private $odds;
 
@@ -71,7 +71,7 @@ class Bet
      * @var float
      *
      * @ORM\Column(name="stake_percent", type="float")
-     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\NotBlank()
      */
     private $stake_percent;
 
@@ -79,7 +79,7 @@ class Bet
      * @var float
      *
      * @ORM\Column(name="stake_euro", type="float")
-     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\NotBlank()
      */
     private $stake_euro;
 
@@ -87,7 +87,7 @@ class Bet
      * @var boolean
      *
      * @ORM\Column(name="result", type="boolean")
-     * @Assert\NotNull(groups={"registration"})
+     * @Assert\NotNull()
      */
     private $result;
 

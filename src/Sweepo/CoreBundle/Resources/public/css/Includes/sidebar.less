@@ -1,0 +1,41 @@
+#sidebar {
+    width:76px;
+    float:left;
+    background:#eee;
+    position:relative;
+    z-index:0;
+
+    ul {
+        margin:0;
+
+        li {
+            list-style:none;
+            height:76px;
+            width:76px;
+            position:relative;
+            border-bottom: 1px solid #DFDFDF;
+
+            a {
+                height:100%;
+                width:100%;
+                position:absolute;
+
+                img {
+                    position:absolute;
+                    top:19px;
+                    left:23px;
+                }
+            }
+        }
+    }
+
+    #light_sidebar {
+        position:absolute;
+        top:18px;
+        right:0px;
+        height:42px;
+        width:13px;
+        display:block;
+        background: url('../img/light_sidebar.png') no-repeat top left;
+    }
+}

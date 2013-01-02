@@ -1,0 +1,38 @@
+{% extends "SweepoCoreBundle:Layouts:main.html.twig" %}
+
+{% block container %}
+
+    <div id="action_table">
+        <a href="{{ url('bets_add') }}" class="btn btn-success"><span class="icon-plus icon-white"></span>Ajouter</a>
+        <button class="btn"><span class="icon-filter"></span>Filtres</button>
+    </div>
+
+    <div id="loading_table">
+        <p class="text_center">{{ "loading" | trans }}</p>
+        <div id="progress_bar_table" class="progress progress-info progress-striped active">
+          <div class="bar" style="width: 100%; margin:0 auto;"></div>
+        </div>
+    </div>
+
+    <table id="main_table" class="table"></table>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        '@SweepoBettingBundle/Resources/public/css/bets.less'
+        filter='less,?yui_css'
+    %}
+
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascript %}
+    {% javascripts
+        '@SweepoBettingBundle/Resources/public/js/bets.js'
+        filter='yui_js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

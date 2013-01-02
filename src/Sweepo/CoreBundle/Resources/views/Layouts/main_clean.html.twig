@@ -12,7 +12,7 @@
 
         {% stylesheets
             '@SweepoCoreBundle/Resources/public/components/bootstrap/less/bootstrap.less'
-            '@SweepoCoreBundle/Resources/public/css/app.less'
+            '@SweepoCoreBundle/Resources/public/css/app_clean.less'
             filter='less,?yui_css'
         %}
 
@@ -60,7 +60,6 @@
                 </div>
             {% endfor %}
 
-            {% include "SweepoCoreBundle:Includes:sidebar.html.twig" %}
             <div id="container">
                 {% block container %}{% endblock %}
             </div>

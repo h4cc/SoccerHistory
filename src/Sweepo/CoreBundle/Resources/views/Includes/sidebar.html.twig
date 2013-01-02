@@ -1,0 +1,35 @@
+{% set paths = app.request.pathInfo|split('/') %}
+<div id="sidebar">
+    <ul>
+        <li>
+            <a href="{{ url('timeline') }}">
+                <img src="{{ asset('img/icon-timeline.png') }}" />
+            </a>
+            {% for path in paths %}
+                {% if path == 'timeline' %}
+                    <span id="light_sidebar"></span>
+                {% endif %}
+            {% endfor %}
+        </li>
+        <li>
+            <a href="{{ url('bets') }}">
+                <img src="{{ asset('img/icon-bets.png') }}" />
+            </a>
+            {% for path in paths %}
+                {% if path == 'bets' %}
+                    <span id="light_sidebar"></span>
+                {% endif %}
+            {% endfor %}
+        </li>
+        <li>
+            <a href="#">
+                <img src="{{ asset('img/icon-account.png') }}" />
+            </a>
+            {% for path in paths %}
+                {% if path == 'account' %}
+                    <span id="light_sidebar"></span>
+                {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+</div>
