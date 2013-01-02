@@ -3,6 +3,7 @@
 namespace Sweepo\BettingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Sweepo\UserBundle\User;
 
@@ -30,13 +31,13 @@ class Bet
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
+     * @ORM\OneToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
      * @ORM\JoinColumn(name="first_team", referencedColumnName="id")
      */
     private $first_team;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
+     * @ORM\OneToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
      * @ORM\JoinColumn(name="second_team", referencedColumnName="id")
      */
     private $second_team;
@@ -45,6 +46,8 @@ class Bet
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)
+     * @Assert\NotNull(groups={"registration"})
+     * @Assert\NotBlank(groups={"registration"})
      */
     private $type;
 
@@ -52,6 +55,7 @@ class Bet
      * @var string
      *
      * @ORM\Column(name="bet", type="string", length=255)
+     * @Assert\NotBlank(groups={"registration"})
      */
     private $bet;
 
@@ -59,6 +63,7 @@ class Bet
      * @var float
      *
      * @ORM\Column(name="odds", type="float")
+     * @Assert\NotBlank(groups={"registration"})
      */
     private $odds;
 
@@ -66,6 +71,7 @@ class Bet
      * @var float
      *
      * @ORM\Column(name="stake_percent", type="float")
+     * @Assert\NotBlank(groups={"registration"})
      */
     private $stake_percent;
 
@@ -73,6 +79,7 @@ class Bet
      * @var float
      *
      * @ORM\Column(name="stake_euro", type="float")
+     * @Assert\NotBlank(groups={"registration"})
      */
     private $stake_euro;
 
@@ -80,6 +87,7 @@ class Bet
      * @var boolean
      *
      * @ORM\Column(name="result", type="boolean")
+     * @Assert\NotNull(groups={"registration"})
      */
     private $result;
 

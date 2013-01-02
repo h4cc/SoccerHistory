@@ -9,17 +9,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class ApiController extends Controller
 {
     /**
-     * @Route("/account/table/{username}", name="account_table", options={"expose"=true})
+     * @Route("/table", name="table", options={"expose"=true})
      * @Template()
      */
-    public function tableAction($username)
+    public function tableAction()
     {
-        // If the current user's username doesn't match username query
-        // if ($this->getUser()->getUsername() !== $username) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $user = $this->getUser();
 
-        //     throw $this->createNotFoundException("This page does not exist");
-        // }
+        $bets = $em->getRepository('SweepoBettingBundle:Bet')->findBy(['user' => $user]);
 
-        return ['username' => $username];
+        return [
+            'user' => $user,
+            'bets' => $bets,
+        ];
     }
 }

@@ -1,0 +1,91 @@
+{% extends "SweepoCoreBundle:Layouts:main.html.twig" %}
+
+{% block container %}
+
+    <div id="action_table">
+        <button id="add_bet_button" class="btn btn-success"><span class="icon-plus icon-white"></span>Ajouter</button>
+        <button class="btn"><span class="icon-filter"></span>Filtres</button>
+    </div>
+
+    <div id="add_bet" class="clearfix">
+        <form action="" method="post">
+            <div class="span4">
+                <div>
+                    {{ form_label(form.first_team) }}
+                    {{ form_errors(form.first_team) }}
+                    {{ form_widget(form.first_team) }}
+                </div>
+                <div>
+                    {{ form_label(form.second_team) }}
+                    {{ form_errors(form.second_team) }}
+                    {{ form_widget(form.second_team) }}
+                </div>
+                <div>
+                    {{ form_label(form.type) }}
+                    {{ form_errors(form.type) }}
+                    {{ form_widget(form.type) }}
+                </div>
+                <div>
+                    {{ form_label(form.bet) }}
+                    {{ form_errors(form.bet) }}
+                    {{ form_widget(form.bet) }}
+                </div>
+            </div>
+            <div class="span4">
+                <div>
+                    {{ form_label(form.odds) }}
+                    {{ form_errors(form.odds) }}
+                    {{ form_widget(form.odds) }}
+                </div>
+                <div>
+                    {{ form_label(form.stake_percent) }}
+                    {{ form_errors(form.stake_percent) }}
+                    {{ form_widget(form.stake_percent) }}
+                </div>
+                <div>
+                    {{ form_label(form.stake_euro) }}
+                    {{ form_errors(form.stake_euro) }}
+                    {{ form_widget(form.stake_euro) }}
+                </div>
+                <div>
+                    {{ form_label(form.result) }}
+                    {{ form_errors(form.result) }}
+                    {{ form_widget(form.result) }}
+                </div>
+            </div>
+            <div class="span5">
+                <button class="btn btn-info">Save</button>
+            </div>
+        </form>
+        <i class="icon icon-remove"></i>
+    </div>
+
+    <div id="loading_table">
+        <p class="text_center">{{ "loading" | trans }}</p>
+        <div id="progress_bar_table" class="progress progress-info progress-striped active">
+          <div class="bar" style="width: 100%; margin:0 auto;"></div>
+        </div>
+    </div>
+
+    <table id="main_table" class="table"></table>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        '@SweepoBettingBundle/Resources/public/css/index.less'
+        filter='less,?yui_css'
+    %}
+
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascript %}
+    {% javascripts
+        '@SweepoBettingBundle/Resources/public/js/index.js'
+        filter='yui_js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

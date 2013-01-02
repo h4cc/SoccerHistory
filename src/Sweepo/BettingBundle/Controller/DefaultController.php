@@ -5,21 +5,38 @@ namespace Sweepo\BettingBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
+
+use Sweepo\BettingBundle\Entity\Bet;
+use Sweepo\BettingBundle\Form\BetType;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/account/{username}")
+     * @Route("/", name="index")
      * @Template()
      */
-    public function accountAction($username)
+    public function indexAction(Request $request)
     {
-        // If the current user's username doesn't match username query
-        if ($this->getUser()->getUsername() !== $username) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $user = $this->getUser();
+        $bet = new Bet();
 
-            throw $this->createNotFoundException("This page does not exist");
+        $form = $this->createForm(new BetType($this->get('translator')), $bet);
+
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+
+                $data = $form->getData();
+                die(var_dump($data));
+            }
         }
 
-        return array('username' => $username);
+        return [
+            'user' => $user,
+            'form' => $form->createView(),
+        ];
     }
 }

@@ -1,5 +1,10 @@
 # Generals
 email: "Email"
+loading: "Chargement"
+close: "Fermer"
+save: "Enregistrer"
+success: "Succès"
+fail: "Echec"
 
 # Create
 signin: "S'incrire"
@@ -11,3 +16,16 @@ password2: "Répéter le mot de passe"
 username: "Pseudo"
 password: "Mot de passe"
 login: "Se connecter"
+
+# Index
+add_bet: "Ajouter un pari"
+
+# Add Bet
+first_team: "Première équipe"
+second_team: "Deuxième équipe"
+type: "Type de pari"
+bet: "Pari"
+odds: "Cote"
+stake_percent: "Mise en %"
+stake_euro: "Mise en €"
+result: "Resultat"

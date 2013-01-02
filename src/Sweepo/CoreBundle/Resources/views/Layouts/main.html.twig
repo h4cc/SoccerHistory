@@ -19,6 +19,14 @@
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
 
+        {% stylesheets
+            '@SweepoCoreBundle/Resources/public/components/select2/select2.css'
+            filter='?yui_css'
+        %}
+
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
         {% block stylesheets %}{% endblock %}
 
     </head>
@@ -60,7 +68,9 @@
     {% javascripts
         'bundles/fosjsrouting/js/router.js'
         '@SweepoCoreBundle/Resources/public/components/jquery/jquery.min.js'
+        '@SweepoCoreBundle/Resources/public/components/select2/select2.min.js'
         '@SweepoCoreBundle/Resources/public/components/bootstrap/js/bootstrap-alert.js'
+        '@SweepoCoreBundle/Resources/public/components/bootstrap/js/bootstrap-modal.js'
         filter='yui_js'
     %}
 
@@ -68,6 +78,8 @@
     {% endjavascripts %}
 
     <script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
+    {% include "SweepoCoreBundle:Includes:core_data.html.twig" %}
 
     {% block javascript %}{% endblock %}
 

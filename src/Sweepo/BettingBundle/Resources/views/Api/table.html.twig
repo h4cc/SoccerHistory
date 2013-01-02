@@ -14,54 +14,56 @@
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td class="ratio2 left">20/20/2000</td>
-        <td class="ratio4 left">Olypique Lyonnais - Paris Saint Germain</td>
-        <td class="ratio4 left">Nombre de but marqué en 1ère mi-temps</td>
-        <td class="ratio2 left">+1,5</td>
-        <td class="ratio1 center">2.30</td>
-        <td class="ratio1 center">3</td>
-        <td class="ratio1 center">4,5</td>
-        <td class="ratio1 center">réussi</td>
-        <td class="ratio1 center">16,6</td>
-        <td class="ratio1 center">8</td>
-        <td class="ratio4 left">
-            <button class="btn actions">
-                <span class="icon-edit"></span>
-            </button>
-            <button class="btn btn-danger actions">
-                <span class="icon-remove icon-white"></span>
-            </button>
-        </td>
-    </tr>
-    <tr>
-        <td class="ratio2 left">20/20/2000</td>
-        <td class="ratio4 left">Olypique Lyonnais - Paris Saint Germain</td>
-        <td class="ratio4 left">Nombre de but marqué en 1ère mi-temps</td>
-        <td class="ratio2 left">+1,5</td>
-        <td class="ratio1 center">2.30</td>
-        <td class="ratio1 center">3</td>
-        <td class="ratio1 center">4,5</td>
-        <td class="ratio1 center">réussi</td>
-        <td class="ratio1 center">16,6</td>
-        <td class="ratio1 center">8</td>
-        <td class="ratio4 left">
-            <button class="btn actions">
-                <span class="icon-edit"></span>
-            </button>
-            <button class="btn btn-danger actions">
-                <span class="icon-remove icon-white"></span>
-            </button>
-        </td>
-    </tr>
+
+    {% for bet in bets %}
+        <tr>
+            <td class="ratio2 left">{{ bet.date | date("d.m.Y") }}</td>
+            <td class="ratio4 left">{{ bet.firstTeam.name }} - {{ bet.secondTeam.name }}</td>
+            <td class="ratio4 left">{{ bet.type }}</td>
+            <td class="ratio2 left">{{ bet.bet }}</td>
+            <td class="ratio1 center">{{ bet.odds }}</td>
+            <td class="ratio1 center">{{ bet.stakePercent }}</td>
+            <td class="ratio1 center">{{ bet.stakeEuro }}</td>
+            <td class="ratio1 center">{{ bet.result }}</td>
+            <td class="ratio1 center">{{ bet.gainLoss }}</td>
+            <td class="ratio1 center">{{ bet.profit }}</td>
+            <td class="ratio4 left">
+                <button class="btn actions">
+                    <span class="icon-edit"></span>
+                </button>
+                <button class="btn btn-danger actions">
+                    <span class="icon-remove icon-white"></span>
+                </button>
+            </td>
+        </tr>
+    {% endfor %}
+
 </tbody>
 
-{% block stylesheets %}
-    {% stylesheets
-        '@SweepoBettingBundle/Resources/public/css/table.less'
-        filter='less,?yui_css'
-    %}
+<style type="text/css">
 
-        <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
-{% endblock %}
+    .ratio1 {
+        width: 6%;
+    }
+
+    .ratio2 {
+        width: 8.6%;
+    }
+
+    .ratio3 {
+        width: 13%;
+    }
+
+    .ratio4 {
+        width: 17.4%;
+    }
+
+    .actions {
+        padding: 0 5px 0 5px;
+    }
+
+    .actions .icon-remove, .icon-edit {
+        margin: 2px 0 4px 0;
+    }
+
+</style>

@@ -12,4 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class LeagueRepository extends EntityRepository
 {
+    public function findCountry()
+    {
+        return $this->createQueryBuilder('l')
+            ->orderBy('l.name', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 }

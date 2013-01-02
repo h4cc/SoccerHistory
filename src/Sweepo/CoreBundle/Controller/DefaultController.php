@@ -9,14 +9,5 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="index")
-     * @Template()
-     */
-    public function indexAction()
-    {
-        $user = $this->getUser();
 
-        return ['user' => $user];
-    }
 }

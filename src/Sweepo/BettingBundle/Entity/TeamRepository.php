@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class TeamRepository extends EntityRepository
 {
+    public function findByLike($name)
+    {
+        $qb = $this->createQueryBuilder('t');
+
+        return $qb->where($qb->expr()->like('t.name', "'%{$name}%'"))
+            ->orderBy('t.name', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 }
