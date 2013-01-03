@@ -3,7 +3,7 @@
     <ul>
         <li>
             <a href="{{ url('timeline') }}">
-                <img src="{{ asset('img/icon-timeline.png') }}" />
+                <i class="icon icon-time icon-2x"></i>
             </a>
             {% for path in paths %}
                 {% if path == 'timeline' %}
@@ -13,7 +13,7 @@
         </li>
         <li>
             <a href="{{ url('bets') }}">
-                <img src="{{ asset('img/icon-bets.png') }}" />
+                <i class="icon icon-list icon-2x"></i>
             </a>
             {% for path in paths %}
                 {% if path == 'bets' %}
@@ -23,7 +23,7 @@
         </li>
         <li>
             <a href="#">
-                <img src="{{ asset('img/icon-account.png') }}" />
+                <i class="icon icon-user icon-2x"></i>
             </a>
             {% for path in paths %}
                 {% if path == 'account' %}
