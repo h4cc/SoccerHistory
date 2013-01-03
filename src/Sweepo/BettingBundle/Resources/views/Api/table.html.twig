@@ -5,10 +5,10 @@
         <th class="text_center" style="width:470px">Match</th>
     </tr>
 </thead>
-<tbody>
+<tbody id="table_bet_body">
 
     {% for bet in bets %}
-        <tr>
+        <tr id="{{ bet.id }}" class="">
             <td class="text_center">{{ bet.result }}</td>
             <td class="text_center">{{ bet.date | date("d.m.Y") }}</td>
             <td class="text_left">
@@ -17,6 +17,145 @@
             </td>
         </tr>
     {% endfor %}
+
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+        <tr id="" class="">
+            <td class="text_center">fdsfdsf</td>
+            <td class="text_center">dsfdf</td>
+            <td class="text_left">
+                sdfdsfdsf
+                <i class="icon icon-circle-arrow-right"></i>
+            </td>
+        </tr>
+
+
 
 </tbody>
 
@@ -52,6 +191,10 @@
         border-left:1px solid #E6E6E6;
     }
 
+    #main_table tbody tr td {
+        position:relative;
+    }
+
     #main_table tbody tr:hover {
         background: #daf0ff;
         cursor:pointer;
@@ -63,16 +206,46 @@
         display:none;
     }
 
+    .clicked {
+        background: #daf0ff;
+    }
+
 </style>
 
 <script type="text/javascript">
+
+    var lastDetails = 0;
+
     $(function(){
-        $('td').on('mouseenter', function() {
-            $(this).children('i').show();
+        $('#table_bet_body > tr').on('mouseenter', function() {
+            if (!$(this).hasClass('clicked')) {
+                $(this).children('td').children('i').show();
+            }
         });
 
-        $('td').on('mouseleave', function() {
-            $(this).children('i').hide();
+        $('#table_bet_body > tr').on('mouseleave', function() {
+            if (!$(this).hasClass('clicked')) {
+                $(this).children('td').children('i').hide();
+            }
         });
+
+        $('#table_bet_body tr').on('click', function(){
+            var id = $(this).attr('id');
+            showDetails(id);
+        });
+
+        showDetails($('#table_bet_body > tr:first-child').attr('id'));
     });
+
+    function showDetails(id) {
+        if (id != lastDetails) {
+
+            $("#" + lastDetails).removeClass("clicked");
+            $('#' + lastDetails + ' > td:last-child > i').hide();
+            $("#" + id).addClass("clicked");
+            $('#' + id + ' > td:last-child > i').show();
+
+            lastDetails = id;
+        }
+    }
 </script>
