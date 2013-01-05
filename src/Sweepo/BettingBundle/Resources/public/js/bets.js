@@ -11,7 +11,7 @@ function loadTable()
 {
     $.ajax({
         type : 'GET',
-        url: Routing.generate('table'),
+        url: Routing.generate('bets_table'),
         success: function (data) {
             $('#loading_table').fadeToggle();
             $('#main_table').html(data);
@@ -19,4 +19,3 @@ function loadTable()
         }
     });
 }
-

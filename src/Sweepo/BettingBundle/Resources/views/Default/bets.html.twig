@@ -3,35 +3,71 @@
 {% block container %}
 
     <div id="action_table">
-        <a href="{{ url('bets_add') }}" class="btn btn-success"><span class="icon-plus icon-white"></span>Ajouter</a>
-        <button class="btn"><span class="icon-filter"></span>Filtres</button>
+        <a href="{{ url('bets_add') }}" class="btn btn-success"><i class="icon-plus icon-white margin-i"></i>Ajouter</a>
+        <button class="btn"><i class="icon-filter margin-i"></i>Filtres</button>
     </div>
 
-    <div id="loading_table">
-        <p class="text_center">{{ "loading" | trans }}</p>
-        <div id="progress_bar_table" class="progress progress-info progress-striped active">
-          <div class="bar" style="width: 100%; margin:0 auto;"></div>
+    <div class="side_table">
+        <div id="loading_table">
+            <p class="text_center">{{ "loading" | trans }}</p>
+            <div id="progress_bar_table" class="progress progress-info progress-striped active">
+              <div class="bar" style="width: 100%; margin:0 auto;"></div>
+            </div>
         </div>
+        <table id="main_table" class="table"></table>
     </div>
-
-    <table id="main_table" class="table"></table>
 
     <div id="details" data-spy="affix" data-offset-top="130">
         <div id="position_details">
             <img id="img_details" src="{{ asset('img/affix_details.png') }}" alt="" height="191px" width="330px" />
             <div id="match1" class="match">
-                <div class="title_team">Paris Saint Germain</div>
+                <div id="first_team" class="title_team"></div>
                 <div class="bkg_black"></div>
             </div>
             <div id="match2" class="match">
-                <div class="title_team">Olympique de Marseille</div>
+                <div id="second_team" class="title_team"></div>
                 <div class="bkg_black"></div>
             </div>
-            <div class="round"><i class="icon icon-bolt icon-large"></i></div>
+            <div class="round"><i id="icon_between_two_team" class="icon icon-bolt icon-large"></i></div>
             <div class="info_match">
-                <div class="text_info_match"><i class="icon icon-trophy icon-large"></i>Ligue 1 - France</div>
+                <div class="text_info_match"><i class="icon icon-trophy icon-large margin-i"></i><span id="league"></span><span id="country"></span></div>
                 <div class="bkg_black"></div>
             </div>
+            <table class="rest_details">
+                <tr>
+                    <td><i class="icon icon-reorder margin-i"></i></td>
+                    <td id="type"></td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-chevron-right margin-i"></i></td>
+                    <td id="bet"></td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-barcode margin-i"></i></td>
+                    <td id="odds"></td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-signal margin-i"></i></td>
+                    <td id="stake_percent"></td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-money margin-i"></i></td>
+                    <td id="stake_euro"></td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-check margin-i"></i></td>
+                    <td id="result"></td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-money margin-i"></i></td>
+                    <td id="gain_loss"></td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-bar-chart margin-i"></i></td>
+                    <td id="profit"></td>
+                </tr>
+            </table>
+            <p><a href="#" class="btn"><i class="icon icon-edit margin-i"></i>Editer</a></p>
         </div>
     </div>
 

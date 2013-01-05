@@ -43,6 +43,12 @@ class Bet
     private $second_team;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\League")
+     * @ORM\JoinColumn(name="league", referencedColumnName="id", nullable=true)
+     */
+    private $league;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)
@@ -193,6 +199,29 @@ class Bet
     public function getSecondTeam()
     {
         return $this->second_team;
+    }
+
+    /**
+     * Set league
+     *
+     * @param string $league
+     * @return League
+     */
+    public function setLeague($league)
+    {
+        $this->league = $league;
+
+        return $this;
+    }
+
+    /**
+     * Get league
+     *
+     * @return string
+     */
+    public function getLeague()
+    {
+        return $this->league;
     }
 
     /**

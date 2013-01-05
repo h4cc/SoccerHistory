@@ -43,35 +43,18 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface, C
                 $country = $ar[1];
                 $league->setCountry($country);
                 unset($array[1]);
+                $this->setReference($name, $league);
                 $manager->persist($league);
 
                 foreach ($array as $value) {
                     $team = new Team();
                     $team->setName($value);
                     $team->setLeague($league);
+                    $this->setReference($value, $team);
                     $manager->persist($team);
                 }
             }
         }
-
-        // 1 league and 2 fake teams
-
-        $league = new League();
-        $league->setName('Fantasy');
-        $league->setCountry('Narnia');
-        $manager->persist($league);
-
-        $team = new Team();
-        $team->setName('Xylo');
-        $team->setLeague($league);
-        $this->setReference('xylo', $team);
-        $manager->persist($team);
-
-        $team = new Team();
-        $team->setName('Milo');
-        $team->setLeague($league);
-        $this->setReference('milo', $team);
-        $manager->persist($team);
 
         $manager->flush();
     }

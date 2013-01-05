@@ -244,8 +244,37 @@
             $('#' + lastDetails + ' > td:last-child > i').hide();
             $("#" + id).addClass("clicked");
             $('#' + id + ' > td:last-child > i').show();
+            $('#icon_between_two_team').removeClass('icon-bolt').addClass('icon-refresh icon-spin');
 
             lastDetails = id;
+
+            getBet(id);
         }
+    }
+
+    function getBet(id) {
+        $.ajax({
+            type : 'GET',
+            url: Routing.generate('bets_get', {id: id}),
+            success: function (data) {
+                $('#icon_between_two_team').removeClass('icon-refresh icon-spin').addClass('icon-bolt');
+
+                $('#first_team').text(data.firstTeam.name);
+                $('#second_team').text(data.secondTeam.name);
+                $('#league').text(data.league.name);
+                $('#type').text(data.type);
+                $('#bet').text(data.bet);
+                $('#odds').text(data.odds);
+                $('#stake_percent').text(data.stakePercent);
+                $('#stake_euro').text(data.stakeEuro);
+                $('#result').text(data.result);
+                $('#gain_loss').text(data.gainLoss);
+                $('#profit').text(data.profit);
+
+                if ( null !== data.league.country ) {
+                    $('#country').text(' - ' + data.league.country);
+                }
+            }
+        });
     }
 </script>
