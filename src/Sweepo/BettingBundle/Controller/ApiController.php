@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Symfony\Component\HttpFoundation\Response;
 
 use Sweepo\BettingBundle\Entity\Bet;
 
@@ -16,15 +15,15 @@ use Sweepo\BettingBundle\Entity\Bet;
 class ApiController extends Controller
 {
     /**
-     * @Route("/table", name="bets_table", options={"expose"=true})
+     * @Route("/table/{filter}", defaults={"filter": "date"}, name="bets_table", options={"expose"=true})
      * @Template()
      */
-    public function tableAction()
+    public function tableAction($filter)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $user = $this->getUser();
 
-        $bets = $em->getRepository('SweepoBettingBundle:Bet')->findBy(['user' => $user]);
+        $bets = $em->getRepository('SweepoBettingBundle:Bet')->findForTable($user,$filter);
 
         return [
             'user' => $user,

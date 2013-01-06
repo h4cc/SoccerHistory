@@ -21,34 +21,38 @@ class LoadBetData extends AbstractFixture implements OrderedFixtureInterface, Co
 
     public function load(ObjectManager $manager)
     {
+        $operations = $this->container->get('sweepo_betting.operations');
+
         $bet = new Bet();
-        $bet->setUser($this->getReference('remy'));
+        $bet->setUser($this->getReference('bob'));
         $bet->setFirstTeam($this->getReference('Paris Saint-Germain'));
         $bet->setSecondTeam($this->getReference('Bayern Munich'));
         $bet->setLeague($this->getReference('Ligue 1'));
         $bet->setBet('loltest');
         $bet->setType('test');
-        $bet->setOdds(2.3);
-        $bet->setStakePercent(4.5);
-        $bet->setStakeEuro(4.5);
+        $bet->setOdds(1.78);
+        $bet->setStake(2);
+        $bet->setStakeType(Bet::PERCENT);
         $bet->setResult(true);
-        $bet->setGainLoss(3.4);
-        $bet->setProfit(2.3);
+        $bet->setGainLoss($operations->gainLoss($bet, $this->getReference('bob')->getStock()));
+        $bet->setProfit($operations->profit($bet, $this->getReference('bob')->getStock()));
+        $bet->setDate(new \Datetime());
         $manager->persist($bet);
 
         $bet = new Bet();
-        $bet->setUser($this->getReference('remy'));
+        $bet->setUser($this->getReference('bob'));
         $bet->setFirstTeam($this->getReference('Leverkusen'));
         $bet->setSecondTeam($this->getReference('Dortmund'));
         $bet->setLeague($this->getReference('Ligue 1'));
         $bet->setBet('loltest');
         $bet->setType('test');
         $bet->setOdds(2.3);
-        $bet->setStakePercent(4.5);
-        $bet->setStakeEuro(4.5);
+        $bet->setStake(5);
+        $bet->setStakeType(Bet::EURO);
         $bet->setResult(true);
-        $bet->setGainLoss(3.4);
-        $bet->setProfit(2.3);
+        $bet->setGainLoss($operations->gainLoss($bet, $this->getReference('bob')->getStock()));
+        $bet->setProfit($operations->profit($bet, $this->getReference('bob')->getStock()));
+        $bet->setDate(new \Datetime());
         $manager->persist($bet);
 
         $manager->flush();

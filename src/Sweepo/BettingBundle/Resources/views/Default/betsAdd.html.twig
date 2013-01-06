@@ -15,6 +15,11 @@
                     {{ form_widget(form.second_team) }}
                 </div>
                 <div>
+                    {{ form_label(form.league) }}
+                    {{ form_errors(form.league) }}
+                    {{ form_widget(form.league) }}
+                </div>
+                <div>
                     {{ form_label(form.type) }}
                     {{ form_errors(form.type) }}
                     {{ form_widget(form.type) }}
@@ -24,31 +29,36 @@
                     {{ form_errors(form.bet) }}
                     {{ form_widget(form.bet) }}
                 </div>
-            </div>
-            <div class="span4">
                 <div>
                     {{ form_label(form.odds) }}
                     {{ form_errors(form.odds) }}
                     {{ form_widget(form.odds) }}
                 </div>
+            </div>
+            <div class="span6">
                 <div>
-                    {{ form_label(form.stake_percent) }}
-                    {{ form_errors(form.stake_percent) }}
-                    {{ form_widget(form.stake_percent) }}
+                    {{ form_label(form.date) }}
+                    {{ form_errors(form.date) }}
+                    {{ form_widget(form.date) }}
                 </div>
                 <div>
-                    {{ form_label(form.stake_euro) }}
-                    {{ form_errors(form.stake_euro) }}
-                    {{ form_widget(form.stake_euro) }}
+                    {{ form_label(form.stake) }}
+                    {{ form_errors(form.stake) }}
+                    {{ form_widget(form.stake) }}
+                </div>
+                <div>
+                    {{ form_label(form.stake_type) }}
+                    {{ form_errors(form.stake_type) }}
+                    {{ form_widget(form.stake_type) }}
                 </div>
                 <div>
                     {{ form_label(form.result) }}
                     {{ form_errors(form.result) }}
                     {{ form_widget(form.result) }}
                 </div>
-            </div>
-            <div class="span5">
-                <button class="btn btn-info">Save</button>
+
+                {{ form_rest(form) }}
+                <button id="submit_add_bet" class="btn btn-info">Save</button>
             </div>
         </form>
     </div>

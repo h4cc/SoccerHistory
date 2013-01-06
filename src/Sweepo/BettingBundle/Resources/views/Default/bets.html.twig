@@ -5,6 +5,10 @@
     <div id="action_table">
         <a href="{{ url('bets_add') }}" class="btn btn-success"><i class="icon-plus icon-white margin-i"></i>Ajouter</a>
         <button class="btn"><i class="icon-filter margin-i"></i>Filtres</button>
+        <div id="stock" {% if stock > 0 %}style="color:#5BB75F"{% elseif stock < 0 %}style="color:#f00;"{% endif %}>
+            {{ stock }}
+            <span>{{ 'stock' | trans }} : </span>
+        </div>
     </div>
 
     <div class="side_table">
@@ -19,6 +23,9 @@
 
     <div id="details" data-spy="affix" data-offset-top="130">
         <div id="position_details">
+            <div id="result">
+                <p class="result_thumb"></p>
+            </div>
             <img id="img_details" src="{{ asset('img/affix_details.png') }}" alt="" height="191px" width="330px" />
             <div id="match1" class="match">
                 <div id="first_team" class="title_team"></div>
@@ -35,39 +42,31 @@
             </div>
             <table class="rest_details">
                 <tr>
-                    <td><i class="icon icon-reorder margin-i"></i></td>
+                    <td><i class="icon icon-reorder margin-i"></i>Type de pari :</td>
                     <td id="type"></td>
                 </tr>
                 <tr>
-                    <td><i class="icon icon-chevron-right margin-i"></i></td>
+                    <td><i class="icon icon-chevron-right margin-i"></i>Pari :</td>
                     <td id="bet"></td>
                 </tr>
                 <tr>
-                    <td><i class="icon icon-barcode margin-i"></i></td>
+                    <td><i class="icon icon-barcode margin-i"></i>Cote :</td>
                     <td id="odds"></td>
                 </tr>
                 <tr>
-                    <td><i class="icon icon-signal margin-i"></i></td>
-                    <td id="stake_percent"></td>
+                    <td><i class="icon icon-signal margin-i"></i>Mise :</td>
+                    <td id="stake"></td>
                 </tr>
                 <tr>
-                    <td><i class="icon icon-money margin-i"></i></td>
-                    <td id="stake_euro"></td>
-                </tr>
-                <tr>
-                    <td><i class="icon icon-check margin-i"></i></td>
-                    <td id="result"></td>
-                </tr>
-                <tr>
-                    <td><i class="icon icon-money margin-i"></i></td>
+                    <td><i class="icon icon-money margin-i"></i>Gain/perte :</td>
                     <td id="gain_loss"></td>
                 </tr>
                 <tr>
-                    <td><i class="icon icon-bar-chart margin-i"></i></td>
+                    <td><i class="icon icon-bar-chart margin-i"></i>Profit :</td>
                     <td id="profit"></td>
                 </tr>
             </table>
-            <p><a href="#" class="btn"><i class="icon icon-edit margin-i"></i>Editer</a></p>
+            <p class="edit_button"><a href="" id="link_edit" class="btn"><i class="icon icon-edit margin-i"></i>Editer</a></p>
         </div>
     </div>
 

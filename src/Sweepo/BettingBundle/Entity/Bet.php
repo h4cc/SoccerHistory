@@ -15,6 +15,9 @@ use Sweepo\UserBundle\User;
  */
 class Bet
 {
+    const PERCENT = 'percent';
+    const EURO = 'euro';
+
     /**
      * @var integer
      *
@@ -33,18 +36,21 @@ class Bet
     /**
      * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
      * @ORM\JoinColumn(name="first_team", referencedColumnName="id")
+     * @Assert\NotNull()
      */
     private $first_team;
 
     /**
      * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\Team")
      * @ORM\JoinColumn(name="second_team", referencedColumnName="id")
+     * @Assert\NotNull()
      */
     private $second_team;
 
     /**
      * @ORM\ManyToOne(targetEntity="Sweepo\BettingBundle\Entity\League")
      * @ORM\JoinColumn(name="league", referencedColumnName="id", nullable=true)
+     * @Assert\NotNull()
      */
     private $league;
 
@@ -62,6 +68,7 @@ class Bet
      *
      * @ORM\Column(name="bet", type="string", length=255)
      * @Assert\NotBlank()
+     * @Assert\NotNull()
      */
     private $bet;
 
@@ -70,44 +77,42 @@ class Bet
      *
      * @ORM\Column(name="odds", type="float")
      * @Assert\NotBlank()
+     * @Assert\NotNull()
      */
     private $odds;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="stake_percent", type="float")
-     * @Assert\NotBlank()
+     * @ORM\Column(name="stake", type="float", nullable=true)
      */
-    private $stake_percent;
+    private $stake;
 
     /**
-     * @var float
+     * @var string
      *
-     * @ORM\Column(name="stake_euro", type="float")
-     * @Assert\NotBlank()
+     * @ORM\Column(name="stake_type", type="string", nullable=true)
      */
-    private $stake_euro;
+    private $stake_type;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="result", type="boolean")
-     * @Assert\NotNull()
+     * @ORM\Column(name="result", type="boolean", nullable=true)
      */
     private $result;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="gain_loss", type="float")
+     * @ORM\Column(name="gain_loss", type="float", nullable=true)
      */
     private $gain_loss;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="profit", type="float")
+     * @ORM\Column(name="profit", type="float", nullable=true)
      */
     private $profit;
 
@@ -119,7 +124,7 @@ class Bet
     private $date;
 
     public function __construct() {
-        $this->date = new \Datetime();
+
     }
 
     /**
@@ -294,49 +299,49 @@ class Bet
     }
 
     /**
-     * Set stake_percent
+     * Set stake
      *
-     * @param integer $stakePercent
+     * @param float $stake
      * @return Bet
      */
-    public function setStakePercent($stakePercent)
+    public function setStake($stake)
     {
-        $this->stake_percent = $stakePercent;
+        $this->stake = $stake;
 
         return $this;
     }
 
     /**
-     * Get stake_percent
-     *
-     * @return integer
-     */
-    public function getStakePercent()
-    {
-        return $this->stake_percent;
-    }
-
-    /**
-     * Set stake_euro
-     *
-     * @param float $stakeEuro
-     * @return Bet
-     */
-    public function setStakeEuro($stakeEuro)
-    {
-        $this->stake_euro = $stakeEuro;
-
-        return $this;
-    }
-
-    /**
-     * Get stake_euro
+     * Get stake
      *
      * @return float
      */
-    public function getStakeEuro()
+    public function getStake()
     {
-        return $this->stake_euro;
+        return $this->stake;
+    }
+
+    /**
+     * Set stake_type
+     *
+     * @param string $stakeType
+     * @return Bet
+     */
+    public function setStakeType($stakeType)
+    {
+        $this->stake_type = $stakeType;
+
+        return $this;
+    }
+
+    /**
+     * Get stake_type
+     *
+     * @return string
+     */
+    public function getStakeType()
+    {
+        return $this->stake_type;
     }
 
     /**

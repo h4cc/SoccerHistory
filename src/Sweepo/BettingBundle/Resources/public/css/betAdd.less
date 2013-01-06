@@ -1,5 +1,5 @@
 #add_bet {
-    margin:18px 0 18px 0;
+    position:relative;
     background-color: #EDEDED;
     background-repeat: repeat-x;
     background-image: -khtml-gradient(linear, left top, left bottom, from(#F9F9F9), to(#EDEDED));
@@ -28,7 +28,7 @@
         width:250px;
     }
 
-    input[type="text"], input[type="integer"] {
+    input[type="text"], input[type="integer"], input[type="number"] {
         width:235px;
     }
 
@@ -37,5 +37,54 @@
         top:9px;
         right:9px;
         cursor:pointer;
+    }
+
+    #create_bet_date_date {
+        width:200px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    #create_bet_date_date_day {
+        width:45px;
+        margin-right:5px;
+        float:left;
+    }
+
+    #create_bet_date_date_month {
+        width:70px;
+        margin-right:5px;
+        float:left;
+    }
+
+    #create_bet_date_date_year {
+        width:70px;
+        margin-right:5px;
+        float:left;
+    }
+
+    #create_bet_date_time_hour {
+        width:50px;
+        height:30px;
+        margin-right:5px;
+    }
+
+    #create_bet_date_time_minute {
+        width:50px;
+        height:30px;
+        margin-left:5px;
+    }
+
+    .required:after {
+        content: "*";
+        margin-left:4px;
+        color:#f00;
+    }
+
+    #submit_add_bet {
+        position:absolute;
+        right:30px;
+        bottom:20px;
+        margin-top:30px;
     }
 }

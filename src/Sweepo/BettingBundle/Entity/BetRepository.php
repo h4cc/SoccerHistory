@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class BetRepository extends EntityRepository
 {
+    public function findForTable($user, $filter)
+    {
+        $qb = $this->createQueryBuilder('b');
+
+        $qb->where('b.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('b.date', 'DESC');
+
+        return $qb->getQuery()->getResult();
+    }
 }

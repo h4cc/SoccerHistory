@@ -81,6 +81,13 @@ class User implements UserInterface, \Serializable
     private $salt;
 
     /**
+     * @var string $stock
+     *
+     * @ORM\Column(name="stock", type="float", nullable=true)
+     */
+    private $stock;
+
+    /**
      * @var string $createdAt
      *
      * @ORM\Column(name="createdAt", type="datetime")
@@ -264,6 +271,29 @@ class User implements UserInterface, \Serializable
     public function getSalt()
     {
         return $this->salt;
+    }
+
+    /**
+     * Set stock
+     *
+     * @param string $stock
+     * @return User
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get stock
+     *
+     * @return string
+     */
+    public function getStock()
+    {
+        return $this->stock;
     }
 
     public function getRoles()

@@ -18,8 +18,9 @@ class UserType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username');
-        $builder->add('email');
+        $builder->add('username', 'text', ['label' => $this->translator->trans('username')]);
+        $builder->add('email', 'text', ['label' => $this->translator->trans('email')]);
+        $builder->add('stock', 'text', ['label' => $this->translator->trans('stock')]);
         $builder->add('password', 'repeated', array(
             'type'            => 'password',
             'invalid_message' => $this->translator->trans('password_not_match'),

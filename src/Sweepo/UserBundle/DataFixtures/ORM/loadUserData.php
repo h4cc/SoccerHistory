@@ -29,7 +29,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $user->encodePassword($factory);
         $user->setEmail('r.gazelot@gmail.com');
         $user->setIsActive(true);
-        $this->setReference('remy', $user);
+        $user->setStock(200);
         $manager->persist($user);
 
         $user = new User();
@@ -37,7 +37,9 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $user->setPassword('pass');
         $user->encodePassword($factory);
         $user->setEmail('bob@bob.com');
+        $user->setStock(200);
         $user->setIsActive(true);
+        $this->setReference('bob', $user);
         $manager->persist($user);
 
         $manager->flush();

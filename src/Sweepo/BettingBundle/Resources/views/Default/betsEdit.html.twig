@@ -1,0 +1,84 @@
+{% extends "SweepoCoreBundle:Layouts:main.html.twig" %}
+
+{% block container %}
+    <div id="add_bet" class="clearfix">
+        <form action="" method="post">
+            <div class="span4">
+                <div>
+                    {{ form_label(form.first_team) }}
+                    {{ form_errors(form.first_team) }}
+                    {{ form_widget(form.first_team) }}
+                </div>
+                <div>
+                    {{ form_label(form.second_team) }}
+                    {{ form_errors(form.second_team) }}
+                    {{ form_widget(form.second_team) }}
+                </div>
+                <div>
+                    {{ form_label(form.league) }}
+                    {{ form_errors(form.league) }}
+                    {{ form_widget(form.league) }}
+                </div>
+                <div>
+                    {{ form_label(form.type) }}
+                    {{ form_errors(form.type) }}
+                    {{ form_widget(form.type) }}
+                </div>
+                <div>
+                    {{ form_label(form.bet) }}
+                    {{ form_errors(form.bet) }}
+                    {{ form_widget(form.bet) }}
+                </div>
+                <div>
+                    {{ form_label(form.odds) }}
+                    {{ form_errors(form.odds) }}
+                    {{ form_widget(form.odds) }}
+                </div>
+            </div>
+            <div class="span6">
+                <div>
+                    {{ form_label(form.date) }}
+                    {{ form_errors(form.date) }}
+                    {{ form_widget(form.date) }}
+                </div>
+                <div>
+                    {{ form_label(form.stake) }}
+                    {{ form_errors(form.stake) }}
+                    {{ form_widget(form.stake) }}
+                </div>
+                <div>
+                    {{ form_label(form.stake_type) }}
+                    {{ form_errors(form.stake_type) }}
+                    {{ form_widget(form.stake_type) }}
+                </div>
+                <div>
+                    {{ form_label(form.result) }}
+                    {{ form_errors(form.result) }}
+                    {{ form_widget(form.result) }}
+                </div>
+
+                {{ form_rest(form) }}
+                <button id="submit_add_bet" class="btn btn-info">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        '@SweepoBettingBundle/Resources/public/css/betAdd.less'
+        filter='less,?yui_css'
+    %}
+
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascript %}
+    {% javascripts
+        '@SweepoBettingBundle/Resources/public/js/betAdd.js'
+        filter='yui_js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

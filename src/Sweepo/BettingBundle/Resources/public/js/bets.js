@@ -11,7 +11,7 @@ function loadTable()
 {
     $.ajax({
         type : 'GET',
-        url: Routing.generate('bets_table'),
+        url: Routing.generate('bets_table', {filter:'date'}),
         success: function (data) {
             $('#loading_table').fadeToggle();
             $('#main_table').html(data);
