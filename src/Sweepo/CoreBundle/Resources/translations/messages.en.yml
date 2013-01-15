@@ -7,12 +7,17 @@ success: "Success"
 fail: "Fail"
 stock: "Stock"
 
+# NavBar
+my_account: "My account"
+logout: "Logout"
+
 # Create
 username: "Username"
 signin: "Signin"
 password_not_match: "The password fields must match."
 password1: "Password"
 password2: "Password again"
+stock_sigin: "Please give your bankroll"
 
 # Login
 username: "Username"

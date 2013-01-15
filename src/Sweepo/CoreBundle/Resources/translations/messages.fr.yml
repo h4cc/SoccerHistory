@@ -7,12 +7,17 @@ success: "Succès"
 fail: "Echec"
 stock: "Pot"
 
+# NavBar
+my_account: "Mon compte"
+logout: "Se déconnecter"
+
 # Create
 username: "Pseudo"
 signin: "S'incrire"
 password_not_match: "Les champs de Mot de passe doivent être égaux."
 password1: "Mot de passe"
 password2: "Répéter le mot de passe"
+stock_sigin: "Rensignez s'il vous plait votre stock de départ"
 
 # Login
 username: "Pseudo"

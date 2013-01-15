@@ -1,5 +1,22 @@
-{% extends "SweepoCoreBundle:Layouts:main.html.twig" %}
+{% extends "SweepoCoreBundle:Layouts:main_home.html.twig" %}
 
 {% block container %}
-    ok
+    <div class="container_home">
+        <p>
+            <a href="{{ url('login') }}" class="btn btn-large">{{ 'login' | trans }}</a>
+        </p>
+        <p>
+            <a href="{{ url('signin') }}" class="btn btn-large">{{ 'signin' | trans }}</a>
+        </p>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets
+        '@SweepoCoreBundle/Resources/public/css/Default/index.less'
+        filter='less,?yui_css'
+    %}
+
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 {% endblock %}

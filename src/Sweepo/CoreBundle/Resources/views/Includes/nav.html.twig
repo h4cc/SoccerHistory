@@ -1,5 +1,18 @@
 <div id="main_nav" class="navbar navbar-inverse navbar-static">
     <div class="navbar-inner">
         <a id="brand" href="#"></a>
+        {% if app.user is defined %}
+            <div id="nav_account" class="dropdown">
+                <i class="icon icon-sort-down"></i>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ app.user.username }}</a>
+                <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
+                    <li><a tabindex="-1" href="#">{{ 'my_account' | trans }}</a></li>
+                    <li class="divider"></li>
+                    <li><a tabindex="-1" href="{{ path('logout') }}">{{ 'logout' | trans }}</a></li>
+                </ul>
+            </div>
+        {% else %}
+            <a id="login_navbar" href="{{ url('login') }}">{{ 'login' | trans }}</a>
+        {% endif %}
     </div>
 </div>

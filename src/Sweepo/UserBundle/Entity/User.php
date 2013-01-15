@@ -81,9 +81,12 @@ class User implements UserInterface, \Serializable
     private $salt;
 
     /**
-     * @var string $stock
+     * @var integer $stock
      *
-     * @ORM\Column(name="stock", type="float", nullable=true)
+     * @ORM\Column(name="stock", type="integer", nullable=true)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     * @Assert\Type(type="integer")
      */
     private $stock;
 
@@ -276,7 +279,7 @@ class User implements UserInterface, \Serializable
     /**
      * Set stock
      *
-     * @param string $stock
+     * @param integer $stock
      * @return User
      */
     public function setStock($stock)
@@ -289,7 +292,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get stock
      *
-     * @return string
+     * @return integer
      */
     public function getStock()
     {

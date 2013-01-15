@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        {% stylesheets
+            '@SweepoCoreBundle/Resources/public/css/custom_bootstrap.less'
+            '@SweepoCoreBundle/Resources/public/components/font-awesome/less/font-awesome.less'
+            '@SweepoCoreBundle/Resources/public/css/app_clean.less'
+            filter='less,?yui_css'
+        %}
+
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+    <body>
+
+        {% include "SweepoCoreBundle:Includes:nav.html.twig" %}
+
+        {% block container %}{% endblock %}
+
+        {% javascripts
+            'bundles/fosjsrouting/js/router.js'
+            '@SweepoCoreBundle/Resources/public/components/jquery/jquery.min.js'
+            '@SweepoCoreBundle/Resources/public/components/bootstrap/js/bootstrap-dropdown.js'
+            filter='yui_js'
+        %}
+
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        {% block javascript %}{% endblock %}
+
+    </body>
+</html>
